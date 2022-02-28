@@ -19,3 +19,10 @@
     line-height: 1.2em;
     vertical-align: top;
   }
+.reveal pre {
+    font-size: 0.4em;
+    width: 95%
+}
+.reveal pre code {
+    max-height: 500px
+}

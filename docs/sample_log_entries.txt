@@ -6,7 +6,10 @@ Customer No: 05A67C57-E1C3-4D8F-B1E8-5204F5C02892 Subsidiary Code: DE . Attribut
 [2022-02-24 00:23:10.022 GMT] ERROR ShopAPIServlet|1868046048|/servlet/s/marykayintouch-global1/dw/shop/v19_8/baskets 
 custom.checkout []  Customer No: 99999992 Subsidiary Code: DE . There is no configured TaxCode config for Tax Code: null
 
+[2022-02-25 13:45:43.050 GMT] WARN PipelineCallServlet|1596223442|Sites-marykayintouch-cz-Site|CSR-OrderSearchAJAX|OnRequest|TDknpclhOG 
+custom.dw.system.Cache []  
+Cache entry for key 'marykayintouch-czPromotionQualifiers' is too large. The object will not be stored in the cache.
+
 [2021-12-22 04:05:08.631 GMT] ACL 'BUSINESSMGR/SystemMenu/Sites/marykayintouch-my/orders_export:ACCESS' 
 is granted to role 'Configuration Manager' by user 'system'. 
 (permission 'BUSINESSMGR/SystemMenu/Sites/marykayintouch-my/orders_export:ACCESS' to 'Configuration Manager')
-
