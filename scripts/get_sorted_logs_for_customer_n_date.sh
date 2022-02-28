@@ -2,11 +2,12 @@
 #
 # Script to get an sorted log of entries specific to a customer in a particular date
 #
-# USAGE: bash scripts/get_sorted_logs_for_customer_n_date.sh <Logs-root-dir> cust:<Customer-UUID>|sess:<Session-ID> <Date>
+# USAGE: bash scripts/get_sorted_logs_for_customer_n_date.sh <Logs-root-dir> any:<string>|sess:<Session-ID> <Date>
 # 
 # Example usages:
-# 1. scripts/get_sorted_logs_for_customer_n_date.sh cust:74D958E9-D682-49AB-BF7E-3F1943EA53BC 20220126
+# 1. scripts/get_sorted_logs_for_customer_n_date.sh any:74D958E9-D682-49AB-BF7E-3F1943EA53BC 20220126
 # 2. scripts/get_sorted_logs_for_customer_n_date.sh sess:ZIk5xwdgdR 20220126
+# 3. scripts/get_sorted_logs_for_customer_n_date.sh  "any: some other string with spaces" 20220215
 
 # Function to compare two GMT timestamps strings like "2022-01-16 04:12:51.312"
 # Returns -1 if "$1 $" < "$3 $4", 0 if equal and 1 if greater
@@ -145,7 +146,7 @@ function filter_logs_by_session() {
 
 # START of main program
 if [[ $# -lt 3 ]]; then
-	echo "USAGE: bash scripts/get_sorted_logs_for_customer_n_date.sh <Logs-root-dir> cust:<Customer-UUID>|sess:<Session-ID> <Date>"
+	echo "USAGE: bash scripts/get_sorted_logs_for_customer_n_date.sh <Logs-root-dir> any:<string>|sess:<Session-ID> <Date>"
 	exit 1
 fi
 # First get the unique session IDs for this customer on this date
@@ -159,7 +160,7 @@ mkdir -p ./op_sess_logs_${ip_date}_$ip_key
 mkdir -p ./temp_dir0
 mkdir -p ./temp_dir1
 mkdir -p ./temp_gunzip
-if [[ "$key_pfx" == "cust" ]]; then
+if [[ "$key_pfx" == "any" ]]; then
 	while IFS= read -r ip_sess_id ; do
 		filter_logs_by_session "$log_dir" "$ip_sess_id" "$ip_date"
 		echo "... Found $(ls temp_dir0/*.log|wc -l) log files with sessiod id: $ip_sess_id"
@@ -228,5 +229,6 @@ elif [[ "$key_pfx" == "sess" ]]; then
 	sort -nbms -k1.2,1.5 -k1.7,1.8 -k1.10,1.11 -k1.13,1.14 -k1.16,1.17 -k1.19,1.20 -k1.22,1.24  ./op_sess_logs_${ip_date}_${ip_key}/${ip_key}.log ./op_sess_logs_${ip_date}_${ip_key}/jobs_${ip_key}.log >./op_sess_logs_${ip_date}_${ip_key}/${ip_key}_with_jobs.log
 	#rm ./temp_dir1/*.log
 fi
-#rm -rf ./temp_dir0
-#rm -rf ./temp_dir1
+echo "... Checkout the folder ./op_sess_logs_${ip_date}_${ip_key} for output files"
+rm -rf ./temp_dir0
+rm -rf ./temp_dir1
