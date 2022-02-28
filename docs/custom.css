@@ -1,0 +1,21 @@
+#left {
+    left:-8.33%;
+    text-align: left;
+    float: left;
+    width:40%;
+    z-index:-10;
+  }
+  
+#right {
+    left:31.25%;
+    top: 75px;
+    float: right;
+    text-align: right;
+    z-index:-10;
+    width:60%;
+  }
+.reveal section p {
+    font-size: 0.6em;
+    line-height: 1.2em;
+    vertical-align: top;
+  }

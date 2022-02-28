@@ -1,0 +1,12 @@
+
+[2022-02-24 03:44:03.859 GMT] INFO PipelineCallServlet|1790199935|Sites-marykayintouch-global1-Site|Cart-Show|PipelineCall|GzLA3dK_wu 
+custom.checkout []
+Customer No: 05A67C57-E1C3-4D8F-B1E8-5204F5C02892 Subsidiary Code: DE . Attribute ID: orderCost = 22.3. taxAmt = 0, total = 22.3
+
+[2022-02-24 00:23:10.022 GMT] ERROR ShopAPIServlet|1868046048|/servlet/s/marykayintouch-global1/dw/shop/v19_8/baskets 
+custom.checkout []  Customer No: 99999992 Subsidiary Code: DE . There is no configured TaxCode config for Tax Code: null
+
+[2021-12-22 04:05:08.631 GMT] ACL 'BUSINESSMGR/SystemMenu/Sites/marykayintouch-my/orders_export:ACCESS' 
+is granted to role 'Configuration Manager' by user 'system'. 
+(permission 'BUSINESSMGR/SystemMenu/Sites/marykayintouch-my/orders_export:ACCESS' to 'Configuration Manager')
+
