@@ -7,7 +7,7 @@ revealOptions:
   height: 720
 ---
 
-# SFCC Log Files Analysis
+## SFCC Log Files Analysis
 
 Presenter: Appan
 
@@ -25,7 +25,7 @@ Date: 28 Feb, 2022
     - Separate application
     - Requires access from Account Manager
 
-##^ Agenda
+### Agenda
 
 * Webdav Logs Folder & Files
     * Log Types & File Naming Convention
