@@ -2,7 +2,7 @@
 #
 # Script to get an sorted log of entries specific to a customer in a particular date
 #
-# USAGE: bash scripts/get_sorted_logs_for_customer_n_date.sh <Logs-root-dir> <Customer-UUID> <Date>
+# USAGE: bash scripts/get_sorted_logs_for_customer_n_date.sh <Logs-root-dir> cust:<Customer-UUID>|sess:<Session-ID> <Date>
 # 
 # Example usages:
 # 1. scripts/get_sorted_logs_for_customer_n_date.sh cust:74D958E9-D682-49AB-BF7E-3F1943EA53BC 20220126
