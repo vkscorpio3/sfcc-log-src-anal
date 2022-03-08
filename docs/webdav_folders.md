@@ -11,7 +11,8 @@
       |  +---archive/
       |
       |-jobs/
-      |  +---<job-name-1>/
+      |  |
+         |---<job-name-1>/
       |  |
       |  +---<job-name-2>/
       |

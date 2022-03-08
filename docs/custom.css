@@ -26,3 +26,7 @@
 .reveal pre code {
     max-height: 500px
 }
+
+section {
+  font-size: 34px;
+}
